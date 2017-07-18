@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
     "react-scripts": "1.0.10"
   },
   "dependencies": {
+    "axios": "^0.16.2",
+    "d3": "^4.10.0",
+    "glamor": "^3.0.0-3",
+    "glamorous": "^3.23.5",
+    "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
