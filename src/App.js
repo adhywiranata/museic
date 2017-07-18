@@ -34,6 +34,7 @@ const App = () => (
           <Route path="/artist/:artistId" component={MyArtists} />
           {/* <Route path="/callback/:access_token/:refresh_token" component={AuthSuccess} /> */}
           <Route path="/callback" component={AuthSuccess} />
+          <Route component={() => (<div>404</div>)} />
         </Switch>
       </div>
     </ConnectedRouter>
