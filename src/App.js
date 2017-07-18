@@ -1,21 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+import './App.css';
+import {
+  Login,
+  AuthSuccess,
+  Home,
+  MyArtists,
+  Profile,
+  NewReleases,
+  TopArtists,
+} from './containers';
+import { Header } from './components';
+
+const App = () => (
+  <BrowserRouter>
+    <div className="App">
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/new-releases" component={NewReleases} />
+        <Route path="/me" component={Profile} />
+        <Route path="/artists" component={TopArtists} />
+        <Route path="/artist/:artistId" component={MyArtists} />
+        {/* <Route path="/callback/:access_token/:refresh_token" component={AuthSuccess} /> */}
+        <Route path="/callback" component={AuthSuccess} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
 
 export default App;
