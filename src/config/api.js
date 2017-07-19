@@ -1,3 +1,3 @@
-export const SPOTIFY_CLIENT_ID = '4f38993541a34da0bde6ef4d800e1cad';
-export const SPOTIFY_USER_SCOPES = 'user-read-private user-read-email user-follow-read user-read-recently-played user-top-read';
-export const SPOTIFY_CALLBACK_URL = 'https://museic.adhywiranata.com/callback/';
+export const SPOTIFY_CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+export const SPOTIFY_USER_SCOPES = process.env.REACT_APP_SPOTIFY_USER_SCOPES;
+export const SPOTIFY_CALLBACK_URL = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_SPOTIFY_PROD_CALLBACK_URL : process.env.REACT_APP_SPOTIFY_DEV_CALLBACK_URL;

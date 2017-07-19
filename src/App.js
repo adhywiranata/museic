@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
@@ -25,6 +26,11 @@ const App = () => (
     <ConnectedRouter history={history}>
       <div className="App">
         <Header />
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Museic</title>
+          <link rel="canonical" href="https://museic.adhywiranata.com" />
+        </Helmet>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />

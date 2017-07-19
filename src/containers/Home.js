@@ -3,16 +3,28 @@ import axios from 'axios';
 
 const styles = {
   container: {
-    marginTop: -50,
+    marginTop: -100,
     width: '100%',
-    height: '100vh',
+    height: '97vh',
     background: '#67B26F',
     background: '-webkit-linear-gradient(to right, #4ca2cd, #67B26F)',
     background: 'linear-gradient(to right, #4ca2cd, #67B26F)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   sectionHeading: {
     color: '#FFFFFF',
-    fontSize: '2em',
+    fontSize: '7em',
+    lineHeight: 0,
+    marginTop: 0,
+  },
+  sectionContent: {
+    color: '#F5F5F5',
+    fontSize: '1.5em',
+    fontWeight: 100,
+    lineHeight: 0,
   },
   list: {
     width: '100%',
@@ -46,7 +58,10 @@ class Home extends React.Component {
   render() {
     return (
       <div style={styles.container}>
-        <h2 style={styles.sectionHeading}>Hello!</h2>
+        <h2 style={styles.sectionHeading}>MUSEIC</h2>
+        <p style={styles.sectionContent}>
+          Spotify fan? Find out interesting data specially for you!
+        </p>
       </div>
     );
   }

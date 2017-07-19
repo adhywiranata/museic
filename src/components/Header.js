@@ -5,13 +5,15 @@ import logo from './logo.svg';
 
 const Header = () => (
   <div className="App-header">
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <img src={logo} className="App-logo" alt="logo" />
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <h1 className="App-logo-text">
-          MUSI<span style={{ color: '#1ED760' }}>KANAL</span>ISA
-        </h1>
-      </div>
+    <div>
+      <Link to="/" style={{ display: 'flex', flexDirection: 'row', color: '#FFFFFF', textDecoration: 'none' }}>
+        <img src={logo} className="App-logo" alt="logo" />
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <h1 className="App-logo-text">
+            MUSE<span style={{ color: '#1ED760' }}>IC</span>
+          </h1>
+        </div>
+      </Link>
     </div>
     <nav className="App-nav">
       <ul>
