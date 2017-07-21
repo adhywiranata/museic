@@ -88,15 +88,19 @@ export default ({ name, images, artists, popularity, release_date }) => (
       </ImageOverlay>
     </RelativeBox>
     <Box>
-      <Text>
-        {`
-          Released on  
-          ${moment(release_date, 'YYYY-MM-DD').format('DD MMM Y')}
-        `}
-      </Text>
-      <Text>Popularity: {popularity}</Text>
+      {
+        release_date && (
+          <Text>
+            {`
+              Released on  
+              ${moment(release_date, 'YYYY-MM-DD').format('DD MMM Y')}
+            `}
+          </Text>
+        )
+      }
+      { popularity && <Text>Popularity: {popularity}</Text> }
       <Ul style={{ padding: 0 }}>
-        { artists.map(artist => (
+        { artists && artists.map(artist => (
           <Link key={artist.id} to={`/artist/${artist.id}`} style={{ textDecoration: 'none' }}>
             <Li>
               {artist.name}
