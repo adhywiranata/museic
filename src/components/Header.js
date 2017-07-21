@@ -1,9 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import logo from './logo.svg';
 
-const Header = () => (
+const routesData = [
+  { key: 1, to:'/', label:'HOME' },
+  { key: 2, to:'/new-releases', label:'NEW RELEASES' },
+  { key: 3, to:'/artists', label:'ARTISTS' },
+  { key: 4, to:'/me', label:'RECENT TRACKS' },
+  { key: 5, to:'/login', label:'LOGIN' },
+];
+
+const Header = ({ router }) => (
   <div className="App-header">
     <div>
       <Link to="/" style={{ display: 'flex', flexDirection: 'row', color: '#FFFFFF', textDecoration: 'none' }}>
@@ -17,14 +26,20 @@ const Header = () => (
     </div>
     <nav className="App-nav">
       <ul>
-        <Link to="/"><li>HOME</li></Link>
-        <Link to="/new-releases"><li>NEW RELEASES</li></Link>
-        <Link to="/artists"><li>ARTISTS</li></Link>
-        <Link to="/me"><li>RECENT TRACKS</li></Link>
-        <Link to="/login"><li>LOGIN</li></Link>
+        {routesData.map(({ key, to, label}) => (
+          <Link key={key} to={to}>
+            <li className={router.location.pathname === to ? 'active' : ''}>
+              {label}
+            </li>
+          </Link>
+        ))}
       </ul>
     </nav>
   </div>
 );
 
-export default Header;
+const mapStateToProps = (state) => ({
+  router: state.router,
+});
+
+export default connect(mapStateToProps, null)(Header);
