@@ -10,6 +10,7 @@ import store from './store/configureStore';
 import './App.css';
 import {
   Login,
+  Logout,
   AuthSuccess,
   Home,
   MyArtists,
@@ -34,6 +35,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/logout" component={Logout} />
           <Route path="/new-releases" component={NewReleases} />
           <Route path="/me" component={Profile} />
           <Route path="/artists" component={TopArtists} />
