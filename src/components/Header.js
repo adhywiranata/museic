@@ -9,8 +9,15 @@ const routesData = [
   { key: 2, to:'/new-releases', label:'NEW RELEASES' },
   { key: 3, to:'/artists', label:'ARTISTS' },
   { key: 4, to:'/me', label:'RECENT TRACKS' },
-  { key: 5, to:'/login', label:'LOGIN' },
 ];
+
+if(localStorage.getItem('accessToken')) {
+  routesData.push({ key: 5, to:'/logout', label:'LOGOUT' });
+}
+
+if(!localStorage.getItem('accessToken')) {
+  routesData.push({ key: 5, to:'/login', label:'LOGIN' });
+}
 
 const Header = ({ router }) => (
   <div className="App-header">
