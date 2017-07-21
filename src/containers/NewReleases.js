@@ -59,7 +59,8 @@ class NewReleases extends React.Component {
         this.setState({ fetchDone: true, fetchError: true });
       });
     })
-    .catch(() => {
+    .catch((e) => {
+      console.log(e);
       this.setState({ fetchDone: true, fetchError: true });
     });
   }
