@@ -79,14 +79,15 @@ const Li = glamorous.li({
   listStyleType: 'none',
 });
 
-export default ({ name, images, artists, popularity, release_date }) => (
+export default ({ name, images, artists, popularity, release_date, album }) => (
   <Card>
-    <RelativeBox>
-      <BoxImg src={images[0].url} width="100%" alt={name} />
+     <RelativeBox>
+       {images && <BoxImg src={images[0].url} width="100%" alt={name} />} 
+       {album && <BoxImg src={album.images[0].url} width="100%" alt={name} />} 
       <ImageOverlay>
         <Title>{name}</Title>
       </ImageOverlay>
-    </RelativeBox>
+    </RelativeBox> 
     <Box>
       {
         release_date && (
